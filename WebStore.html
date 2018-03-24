@@ -1,0 +1,132 @@
+</!DOCTYPE html>
+<html>
+<head lang="en">
+	<title>Web Store</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./lndcss.css">
+  <script type="text/javascript">
+    var totalcost= 0.0;
+    console.log(totalcost);
+  	function addCost(x)
+    {
+      var totalcost1 = (parseFloat(totalcost) + parseFloat(x)).toFixed(3);
+      totalcost=totalcost1;
+      console.log(totalcost1);
+      console.log(x);
+      document.getElementById("totalprice").innerHTML=totalcost;
+    }
+  </script>
+</head>
+<body>
+	<div class="container-fluid my-bg">
+    <div class="bg-cover">
+      <div class="container">
+        <div class="row my-title1">
+          <div class="col align-self-center d-flex justify-content-center">
+            <img src="./output-0.png" class="my-img">
+          </div>
+        </div>
+        <div class="row my-title2">
+          <div class="col d-flex justify-content-center">
+            <div class="my-block">
+              <div class="my-font d-flex justify-content-center">
+                <p class="timesNR" style="padding-top: 5px;">Pay your Bouquet with lightening network</p>
+              </div>
+              <div class="price-font d-flex justify-content-center">
+                <p class="timesNR" id="totalprice" name="totalprice" style="font-size: 30px;"></p>
+                <p class="timesNR" style="font-size: 30px;"> &nbsp;mBTC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row my-title2" id="checkout1" onclick="window.location.href='./Invoice.html'">
+          <div class="col d-flex justify-content-center">
+            <div class="my-block2 d-flex justify-content-center" >
+             <p class="timesNR"> <b>checkout</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="block1" class="container items-container">
+        <div class="row">
+          <div class="col-sm-4 my-item-cover">
+            <div class="my-item-img-cover d-flex justify-content-center">
+              <img src="./bouquet4.png" class="my-item-img">
+            </div>
+            
+            <div class="d-flex justify-content-center">
+              <div class="my-desc d-flex justify-content-center">
+                Premium Joyful Bouquet 
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="my-price d-flex justify-content-center">
+                0.032 mBTC
+              </div>
+            </div>
+            <div class="d-flex justify-content-center" onclick="addCost(0.032)">
+              <div class="my-checkout d-flex justify-content-center">
+                Add to cart!
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 my-item-cover">
+            <div class="my-item-img-cover d-flex justify-content-center">
+              <img src="./bouquet2.png" class="my-item-img">
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="my-desc d-flex justify-content-center">
+                Roselly Surprise
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="my-price d-flex justify-content-center" >
+                0.065 mBTC
+              </div>
+            </div>
+            <div class="d-flex justify-content-center" onclick="addCost(0.065)">
+              <div class="my-checkout d-flex justify-content-center">
+                Add to cart!
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 my-item-cover">
+            <div class="my-item-img-cover d-flex justify-content-center">
+              <img src="./bouquet5.png" class="my-item-img">
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="my-desc d-flex justify-content-center">
+                Potted Pink calla Lily
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="my-price d-flex justify-content-center">
+                0.076 mBTC
+              </div>
+            </div>
+            <div class="d-flex justify-content-center" onclick="addCost(0.076)">
+              <div class="my-checkout d-flex justify-content-center">
+                Add to cart!
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+          <div id="block2" class="container my-invoice-cont d-flex justify-content-center">
+            <div class="my-inv-cover">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="my-footer d-flex justify-content-center">
+          <a href="https://www.openxcell.com/">OpenXcell.com</a>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

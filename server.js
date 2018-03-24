@@ -10,8 +10,8 @@ var lnrpcDescriptor = grpc.load('rpc.proto');
 //console.log(lnrpcDescriptor);
 var lnrpc = lnrpcDescriptor.lnrpc;
 //var lightning = new lnrpc.Lightning('localhost:10009', credentials);
-var html = (fs.readFileSync('index.html').toString());
-//var reqPage = (fs.readFileSync('request.html').toString());
+var html = (fs.readFileSync('webstore.html').toString());
+var reqPage = (fs.readFileSync('invoice.html').toString());
 var sleep = require('sleep');
 var moment = require('moment'); 
 var https = require('https');
@@ -60,7 +60,7 @@ app.use(express.static(__dirname + '/index'));
 app.get('/',function (req, res) {
     console.log("Home page loaded.")
     
-    var amount = req.query['amt'];
+    var amount = req.query['totalprice'];
      //create invoice to allow skipping
      call = lightning.addInvoice({ 
         memo: "adwatcher",
@@ -72,7 +72,7 @@ app.get('/',function (req, res) {
 	    }
             console.log("Response in add invoice = " + response);
             console.log('AddInvoice: ' + response.payment_request);
-            res.send(response.payment_request);
+            res.send(reqPage,response.payment_request);
             //display newly generated invoices everytime the page loads with qr code(still working on qr code gerneration)
             //res.send(html+''+ '<br><h4 id="note1">Please pay 50 sat invoice to donate, then click "support" to verify.</h4><p id="invoice">'+response.payment_request+'</p><a href="http://adwatcher.hopto.org:7777/skip/' +response.payment_request + '/"'+'><img id="support" src="https://pre00.deviantart.net/b38e/th/pre/i/2015/181/f/3/youtube_support_button__donation_button__by_koolgoldfinch-d8zf3if.png"></img></a><!--Hide the pay button until user watches for a minute --><script>function readyToPay() {$("#paid").show("slow");};$("#paid").hide(); window.setTimeout(readyToPay, 300000);</script>');
      });
@@ -80,6 +80,6 @@ app.get('/',function (req, res) {
 
 //console.log(value);
 
-	app.listen(8000, () => {
+	app.listen(8000, '172.30.2.82', () => {
 	console.log('Server is up on port 8000');
 });

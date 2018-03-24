@@ -1,0 +1,64 @@
+.my-bg{
+	background-image: url('./bg2.jpg') ;
+	background-attachment: fixed;
+}
+.my-img{
+	height: 250px;
+	width: 250px;
+	justify-content: center;
+	border-radius: 50%;
+	border: 3px solid #24471b;
+}
+.my-title1{
+	padding-top: 80px;
+	float: center;
+}
+.my-block{
+	background-color: #24471b;
+	width: 300px;
+	height: 40px;
+}
+.my-font{
+	color: #e3dec0;
+	font-size: 14px;
+}
+.timesNR{
+	font-family: "Times New Roman", Times, serif;
+}
+.price-font{
+	color: white;
+	font-size: 30px;
+}
+
+.my-footer{
+	padding-top: 80px;
+	padding-bottom: 50px;
+	color: black;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	text-decoration: none;
+	color: black;
+}
+.my-invoice-cover{
+	padding-top: 80px;
+}
+.inv-title{
+	background-color: #d9d2b5;
+	width: 500px;
+	height: 60px;
+	padding-top: 15px;
+	color: #24471b;
+}
+.inv-text{
+	background-color: #e7e3ca;
+	width: 500px;
+	height: auto;
+	padding: 20px;
+	border-top: 2px solid #97894e;
+
+}
+/*e3dec0*/
